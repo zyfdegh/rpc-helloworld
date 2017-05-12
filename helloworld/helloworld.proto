@@ -39,6 +39,15 @@ package helloworld;
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc SayFuck (FuckRequest) returns (FuckReply) {}
+}
+
+message FuckRequest {
+    string name = 1;
+}
+
+message FuckReply {
+    string message = 1;
 }
 
 // The request message containing the user's name.
