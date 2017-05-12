@@ -39,7 +39,7 @@ import (
 
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
-	pb "google.golang.org/grpc/examples/helloworld/helloworld"
+	pb "github.com/zyfdegh/rpc-helloworld/helloworld"
 	"google.golang.org/grpc/reflection"
 )
 
@@ -68,7 +68,7 @@ func main() {
 	pb.RegisterGreeterServer(s, &server{})
 	// Register reflection service on gRPC server.
 	reflection.Register(s)
-	
+
 	log.Printf("server listenning on %s\n", port)
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
